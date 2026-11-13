@@ -44,7 +44,11 @@ __xdata struct machine_runtime machine_detected;
 void crc16_bank1(__xdata uint8_t *v) __naked;
 
 // See setup_serial_timer1() for valid baudrate settings!
+#if defined(BOARD_BOOT_SINGLE_IO)
+#define SERIAL_BAUD_RATE BOARD_SERIAL_BAUD_RATE
+#else
 #define SERIAL_BAUD_RATE 115200
+#endif
 
 /* All RTL839x switches have an external 25MHz Oscillator,
    VALID RTL8372/3 CPU frequencies found in switches are:
@@ -55,8 +59,11 @@ void crc16_bank1(__xdata uint8_t *v) __naked;
    For the following frequencies, divider settings are known
    and can be selected on all known HW (Register 0x6040)
 */
+#if defined(BOARD_BOOT_SINGLE_IO)
+#define CLOCK_HZ BOARD_CPU_HZ
+#else
 #define CLOCK_HZ 125000000
-//#define CLOCK_HZ 20800000
+#endif
 
 // Derive the divider settings for the internal clock
 #if CLOCK_HZ == 20800000
@@ -1290,12 +1297,14 @@ void setup_clock(void)
 {
 	reg_read_m(RTL837X_REG_HW_CONF);
 	sfr_mask_data(0, 0x30, 0);
-#if CLOCK_DIV != 0
+#if CLOCK_DIV != 0 || defined(BOARD_BOOT_SINGLE_IO)
 	 // Divider in bits 4 & 5
 	sfr_mask_data(0, 0, CLOCK_DIV << 4);
 #endif
+#if !defined(BOARD_BOOT_SINGLE_IO)
 	// Bit 8 is set in managed mode 125MHz to use fast SPI mode
 	sfr_mask_data(1, 0, 0x01);
+#endif
 	reg_write_m(RTL837X_REG_HW_CONF);
 
 	// Enable serial interface, set bit 0
@@ -1432,7 +1441,7 @@ void set_sys_led_state(uint8_t state)
  * |    57600 |   1   |   4 |    34 | 0xde |  57444.9 | −0.27% |
  * |   115200 |   1   |   4 |    17 | 0xef | 114889.7 | −0.27% |
  */
-#if CLOCK_HZ != 125000000
+#if CLOCK_HZ != 125000000 && !(CLOCK_HZ == 20800000 && SERIAL_BAUD_RATE == 9600)
 #warning "SERIAL 0 baudrate setting may only valid for F_CPU = 125 MHz!"
 #endif
 void setup_serial_timer1(void)

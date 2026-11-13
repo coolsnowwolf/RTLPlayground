@@ -1,0 +1,1 @@
+pcb/LIANGUO_2G5F4_10G2_V1_01.c

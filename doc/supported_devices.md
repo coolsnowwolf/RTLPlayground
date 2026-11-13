@@ -82,3 +82,8 @@ serial consoles and use 4 independent RTL8372 SoCs. No central control is provid
 even if it has been successfully demonstrated to install RTLPlayground to individual SoCs.
 - [GigaPlus GP-S25-1602](https://www.servethehome.com/gigaplus-gp-s25-1602-review-a-cheap-16-port-2-5gbe-and-2-port-10g-switch/)
 - [Vimin VM S251602P 16 Port 2.5G PoE Switch With 2x 10G SFP+](https://www.servethehome.com/vimin-vm-s251602p-16-port-2-5g-poe-switch-review-cyperf/vimin-vm-s251602p-16-port-2-5g-poe-switch-with-2x-10g-sfp-battery-2/)
+
+Experimental PR #561 profiles and validation status: [Lianguo and SEEKER](adapted_targets.md).
+
+- [Lianguo 2G5F4_10G2 V1.01](devices/LIANGUO_2G5F4_10G2_V1_01.md)
+- [SEEKER RTL-4GT-2S+ V1.03](devices/SEEKER_RTL_4GT_2S_PLUS_V1_03.md)
