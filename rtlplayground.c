@@ -36,6 +36,10 @@
 #include "boot.h"
 #include "sfp.h"
 
+#ifdef MACHINE_PROFILE_HEADER
+#include MACHINE_PROFILE_HEADER
+#endif
+
 extern __code const struct machine machine;
 extern __xdata uint32_t flash_size;
 

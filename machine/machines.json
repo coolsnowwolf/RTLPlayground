@@ -280,6 +280,18 @@
     "pcb": "S25G1109FP_V1_3"
   },
   {
+    "machine": "SEEKER_RTL_4GT_2S_PLUS_V1_03",
+    "friendly_name": "SEEKER RTL-4GT-2S+ V1.03",
+    "pcb": "SEEKER_RTL_4GT_2S_PLUS_V1_03",
+    "profile_header": "machine/SEEKER_RTL_4GT_2S_PLUS_V1_03.h"
+  },
+  {
+    "machine": "SEEKER_RTL_4GT_2S_PLUS_V1_03_125MHZ",
+    "friendly_name": "SEEKER RTL-4GT-2S+ V1.03",
+    "pcb": "SEEKER_RTL_4GT_2S_PLUS_V1_03",
+    "profile_header": "machine/SEEKER_RTL_4GT_2S_PLUS_V1_03_125MHZ.h"
+  },
+  {
     "machine": "SODOLA_SL902_SWTGW124AS",
     "friendly_name": "Sodola SL902-SWTGW124AS",
     "pcb": "PCB_SWTG024AS_V2_1_1_19023"

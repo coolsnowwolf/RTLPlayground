@@ -62,6 +62,7 @@ else ifneq ($(strip $(MACHINE)),)
     $(error MACHINE='$(MACHINE)' has no valid entry in $(MACHINE_DESCRIPTOR))
 	endif
 	MACHINE_SRC = machine/pcb/$(MACHINE_PCB_NAME).c
+	MACHINE_PROFILE_HEADER := $(shell jq -r --arg machine "$(MACHINE)" '.[] | select(.machine == $$machine) | .profile_header // empty' $(MACHINE_DESCRIPTOR))
 	else
     $(error Machine registry $(MACHINE_DESCRIPTOR) does not exist)
 	endif
@@ -96,6 +97,9 @@ endif
 	MACHINE_CC_FLAGS += -DFRIENDLY_NAME='"$(FRIENDLY_NAME)"'
 ifneq ($(MACHINE_PCB_NAME),)
 	MACHINE_CC_FLAGS += -DMACHINE_PCB_NAME=$(MACHINE_PCB_NAME)
+endif
+ifneq ($(MACHINE_PROFILE_HEADER),)
+	MACHINE_CC_FLAGS += -DMACHINE_PROFILE_HEADER='"$(MACHINE_PROFILE_HEADER)"'
 endif
 endif
 endif
