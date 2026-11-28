@@ -65,6 +65,11 @@
     "pcb": "S600W_4GT_2XGT_SE"
   },
   {
+    "machine": "HASIVO_S600WP_4GT_2XGT_SE",
+    "friendly_name": "Hasivo S600WP-4GT-2XGT-SE",
+    "pcb": "RTL_4GT_2XGT_SE_V1_01"
+  },
+  {
     "machine": "HISOURCE_HI_K0402WS_V2_0",
     "friendly_name": "Hisource Hi-K0402WS",
     "pcb": "PCB_K0402W_V2_0"
@@ -101,7 +106,7 @@
   },
   {
     "machine": "HORACO_HC_SWTGW218AS_V2_0_1_19649",
-    "friendly_name": "Horaco HC-SWTG218AS",
+    "friendly_name": "Horaco HC-SWTGW218AS",
     "pcb": "PCB_SWTG018AS_A_V2_0_1_19649"
   },
   {
@@ -256,7 +261,7 @@
   },
   {
     "machine": "S604GTP_2SX_SL",
-    "friendly_name":  "POEPlus S604GTP-2SX-SL",
+    "friendly_name": "POEPlus S604GTP-2SX-SL",
     "pcb": "RTL_4GT_2S__V1_04"
   },
   {
@@ -330,6 +335,11 @@
     "pcb": "SR_S25G2206F_N_V1_2"
   },
   {
+    "machine": "XIAOMI_SW_106T_A",
+    "friendly_name": "Xiaomi SW-106T-A",
+    "pcb": "MD09HT_V30"
+  },
+  {
     "machine": "XIKESTOR_SKS3200M_8GPY1XF",
     "friendly_name": "XikeStor SKS3200M-8GPY1XF",
     "pcb": "PCB_SWTG118AS_V2_1_17462"
@@ -353,5 +363,15 @@
     "machine": "ZOERAX_HG0402XG",
     "friendly_name": "ZoeRax HG0402XG",
     "pcb": "HG0402XG_V1_1"
+  },
+  {
+    "machine": "SODOLA_SL_SWTGW0108P",
+    "friendly_name": "Sodola SL-SWTGW0108P",
+    "pcb": "S1100W_8GT_1SX_73N_V1_04"
+  },
+  {
+    "machine": "ZX-SWTG024AS",
+    "friendly_name": "ZX-SWTG024AS",
+    "pcb": "PCB_SWTG024AS_V1_0_16584"
   }
 ]
